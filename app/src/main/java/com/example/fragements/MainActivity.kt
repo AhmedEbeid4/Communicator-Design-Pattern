@@ -39,9 +39,9 @@ class MainActivity : AppCompatActivity() ,Communicator {
     private fun replace(fragment: Fragment) {
 
         val transaction = supportFragmentManager.beginTransaction()
+        transaction.setCustomAnimations(R.anim.slide_in_left,R.anim.slide_out_right)
         transaction.replace(binding.frame.id, fragment)
         transaction.addToBackStack(null)
-        transaction.setCustomAnimations(R.anim.slide_in_left,R.anim.slide_out_right)
         transaction.commit()
     }
 
